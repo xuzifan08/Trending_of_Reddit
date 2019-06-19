@@ -42,15 +42,13 @@ comment = comment[['author','body','created_utc','link_id','name','parent_id','s
 submission = submission.withColumnRenamed("name", "submission_id").withColumnRenamed("created_utc","time")
 comment = comment.withColumnRenamed("name", "comment_id").withColumnRenamed("link_id", "submission_id").withColumnRenamed("created_utc","time")
 
-# attach author_id to submisson and comment
-submission_new = submission.join(author, submission.author == author.author,"inner")
-comment_new = comment.join(author, comment.author == author.author,"inner")
-
-
-
 # generate unique id for author
 author = author.withColumn("author_id", f.monotonically_increasing_id())
 
+
+# attach author_id to submisson and comment
+submission = submission.join(author, submission.author == author.author,"inner")
+comment = comment.join(author, comment.author == author.author,"inner")
 
 
 
