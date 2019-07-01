@@ -3,9 +3,6 @@ import os
 from os.path import join
 
 
-
-
-
 def main(filenames,url_prefix,s3_folder):
 	"""
 	download compressed files, decompress it and upload to s3 bucket
@@ -23,7 +20,6 @@ def main(filenames,url_prefix,s3_folder):
 		newfilename = filename.split(".")[0]
 		s3.upload_file(Filename=newfilename, Bucket=S3_BUCKET, Key=join(s3_folder, newfilename))
 		os.system('rm {}'.format(newfilename))
-
 
 
 if __name__ == "__main__":
