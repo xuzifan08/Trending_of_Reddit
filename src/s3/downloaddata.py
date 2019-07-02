@@ -10,22 +10,15 @@ def main(filenames,url_prefix,s3_folder):
 	for filename in filenames:
 		url = join(url_prefix,filename)
 		os.system('wget {}'.format(url))
-		filename_suffix = filename.split(".")[1]
-		if filename_suffix =='bz2':
-			os.system('bunzip2 {}'.format(filename))
-		elif filename_suffix == 'xz':
-			os.system('unxz {}'.format(filename))
-		elif filename_suffix == 'zst':
-			os.system('unzstd {}'.format(filename))
-		newfilename = filename.split(".")[0]
+		new_filename, filename_suffix = filename.split(".")[:2]
+		mapping = {'bz2':'bunzip2','xz':'unxz','zst':'unzstd'}
+		os.system('{} {}'.format(mapping[filename_suffix], filename))
 		s3.upload_file(Filename=newfilename, Bucket=S3_BUCKET, Key=join(s3_folder, newfilename))
 		os.system('rm {}'.format(newfilename))
 
 
 if __name__ == "__main__":
-	"""
-	set connection
-	"""
+	#set connection
 	s3 = boto3.client('s3')
 	S3_BUCKET = 'insightredditdata'
 	
