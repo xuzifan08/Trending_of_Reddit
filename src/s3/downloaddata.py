@@ -12,14 +12,7 @@ def main(filenames,url_prefix,s3_folder):
 		os.system('wget {}'.format(url))
 		new_filename, filename_suffix = filename.split(".")[:2]
 		mapping = {'bz2':'bunzip2','xz':'unxz','zst':'unzstd'}
-		os.system('{} {}'.format(filename_suffix, filename))
-		"""if filename_suffix =='bz2':
-			os.system('bunzip2 {}'.format(filename))
-		elif filename_suffix == 'xz':
-			os.system('unxz {}'.format(filename))
-		elif filename_suffix == 'zst':
-			os.system('unzstd {}'.format(filename))
-		newfilename = filename.split(".")[0]"""
+		os.system('{} {}'.format(mapping[filename_suffix], filename))
 		s3.upload_file(Filename=newfilename, Bucket=S3_BUCKET, Key=join(s3_folder, newfilename))
 		os.system('rm {}'.format(newfilename))
 
