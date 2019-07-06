@@ -7,6 +7,6 @@ Reddit is broken up into more than a million communities known as "subreddits", 
 With explosively large informations generated everyday on Reddit, it's worth the effort to build a data warehouse which stores submissions and comments in a relational database at the same time provide insights for marketing and data science usage.
 
 ## Data Pipeline
-![Image description]()
+![Image description](Screen Shot 2019-07-06 at 12.46.25.png)
 
 
