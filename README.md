@@ -7,16 +7,16 @@ Reddit is broken up into more than a million communities known as "subreddits", 
 With explosively large informations generated everyday on Reddit, it's worth the effort to build a data warehouse which stores submissions and comments in a relational database at the same time provide insights for marketing and data science usage.
 
 ## Data Pipeline
-![alt text](https://github.com/xuzifan08/Trending_of_Reddit/tree/Building-basic-pipeline/"Screen Shot 2019-07-06 at 12.46.25.png")
-
-## Dataset 
-The data source of submissions and comments are stored on https://files.pushshift.io/reddit/
+![Image description](Data_pipeline.png)
 
 ## How does it work?
 ### 1. S3: Download Data with boto3
 ### 2. Spark: ETL
 ### 3. Redshift: Data warehousing
 ### 4. Tableau: Visualization
+
+## Data Source
+Submissions and comments are stored seperately in two different folders on https://files.pushshift.io/reddit/
 
 
 
