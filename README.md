@@ -1,1 +1,2 @@
-# Trending of Reddit
+# Trending Reddit: Big data warehouse 
+## Introduction
