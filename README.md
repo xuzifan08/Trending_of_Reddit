@@ -14,6 +14,7 @@ With explosively large informations generated everyday on Reddit, it's worth the
 ### 2. Spark: ETL
 ### 3. Redshift: Data warehousing
 ### 4. Tableau: Visualization
+### 5. Airflow: Automatic S3 and spark jobs monthly
 
 ## Data Source
 Submissions and comments are stored seperately in two different folders on https://files.pushshift.io/reddit/
