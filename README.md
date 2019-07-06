@@ -1,4 +1,5 @@
 # Trending Reddit - Big data warehouse 
+
 ## Introduction
 Reddit is the sixth-most-popular site in the United States. It’s a massive collection of forums, where people can share news and content or comment on other people’s posts. 
 
@@ -6,8 +7,10 @@ Reddit is broken up into more than a million communities known as "subreddits", 
 
 With explosively large informations generated everyday on Reddit, it's worth the effort to build a data warehouse which stores submissions and comments in a relational database at the same time provide insights for marketing and data science usage.
 
+
 ## Data Pipeline
 ![Image description](data_pipeline.png)
+
 
 ## How does it work?
 #### 1. S3: Download Data with boto3
@@ -15,6 +18,7 @@ With explosively large informations generated everyday on Reddit, it's worth the
 #### 3. Redshift: Data warehousing
 #### 4. Tableau: Visualization
 #### 5. Airflow: Automatic S3 and spark jobs monthly
+
 
 ## Data Source
 Submissions and comments are stored seperately in two different folders on https://files.pushshift.io/reddit/
