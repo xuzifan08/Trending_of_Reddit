@@ -24,9 +24,13 @@ Submissions and comments are stored seperately and monthly in two different fold
 
 
 ## Project Structure
+
 ├── README.md
+
 ├── src
+
 │    ├── Airflow
+
 │    │    ├── __init__.py
 │    │    ├── schedule.py
 │    │    └── run.sh
