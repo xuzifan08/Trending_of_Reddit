@@ -24,13 +24,10 @@ Submissions and comments are stored seperately and monthly in two different fold
 
 
 ## Project Structure
-
+```
 ├── README.md
-
 ├── src
-
 │    ├── Airflow
-
 │    │    ├── __init__.py
 │    │    ├── schedule.py
 │    │    └── run.sh
@@ -54,7 +51,7 @@ Submissions and comments are stored seperately and monthly in two different fold
      ├── trending_of_subreddit_ramen.png
      ├── spark_processing_1.png
      └── spark_processing_2.png
-
+```
 
 ## How does it work?
 #### 1. S3
