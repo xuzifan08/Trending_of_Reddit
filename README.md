@@ -19,18 +19,34 @@ The first graph shows the number of active redditors under a specific subreddit 
 ![Image description](images/data_pipeline.png)
 
 
+## Data Source
+Submissions and comments are stored seperately and monthly in two different folders on https://files.pushshift.io/reddit/
+
+
 ## How does it work?
-#### 1. S3: Download Data with boto3
+#### 1. S3
+
+I wrote a python script using boto3 to download both submission and comment compressed files to EC2 instance, uncompress it, copy it to S3 bucket and delete it on EC2 instance. On top of the workflow, I defined a Airflow task to run the downloading process monthly as the data generating.
 
 
 #### 2. Spark: ETL
+
+![Image description](images/spark_processing_1.png)
+
+![Image description](images/spark_processing_2.png)
+
+
 #### 3. Redshift: Data warehousing
+
+![Image description](images/data_schema.png)
+
+
 #### 4. Tableau: Visualization
+
 #### 5. Airflow: Automatic S3 and spark jobs monthly
 
 
-## Data Source
-Submissions and comments are stored seperately in two different folders on https://files.pushshift.io/reddit/
+
 
 
 
