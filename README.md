@@ -8,7 +8,7 @@ Reddit is broken up into more than a million communities known as "subreddits", 
 
 With explosively large informations generated everyday on Reddit, We can use it for Social Media Marketing, designing recommender systems in terms of different perspectives, machine learning and data analysis. It's worth the effort to design a data pipeline in order to process reddit data for building a big data warehouse which can provide those services above.
 
-This is one use case for the big data warehouse which is created by Tableau . The first graph shows the number of active redditors under a subreddit monthly:
+This is one use case for the big data warehouse which is created by Tableau:
 
 ![Image description](images/trending_of_subreddit_ramen.png)
 
