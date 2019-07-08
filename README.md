@@ -21,6 +21,7 @@ The first graph shows the number of active redditors under a specific subreddit 
 
 ## Data Source
 Submissions and comments are stored seperately and monthly in two different folders on https://files.pushshift.io/reddit/
+2014-2019: 3TB
 
 
 ## Project Structure
@@ -59,7 +60,7 @@ I wrote a python script using boto3 to download both submission and comment comp
 
 
 #### 2. Spark: ETL
-I used spark to read data from s3 as two dataframe: submission and comment. Extracted, unioned and created author and subreddit as dataframe from both submission and comment.
+I used spark to read data from s3 as two dataframe: submission and comment. Extracted, unioned , drop duplicates and created author and subreddit as dataframe from both submission and comment.
 ![Image description](images/spark_processing_1.png)
 
 Then I generated two new submission and comment dataframe by getting useful columns from original dataframe.
