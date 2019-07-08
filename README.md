@@ -23,27 +23,50 @@ The first graph shows the number of active redditors under a specific subreddit 
 Submissions and comments are stored seperately and monthly in two different folders on https://files.pushshift.io/reddit/
 
 
+## Project Structure
+├── README.md
+├── src
+│    ├── Airflow
+│    │    ├── __init__.py
+│    │    ├── schedule.py
+│    │    └── run.sh
+│    ├── s3
+│    │    ├── __init__.py   
+│    │    ├── downloaddata.py
+│    │    └── run.sh
+│    ├── spark
+│    │    ├── __init__.py   
+│    │    ├── read_process.py
+│    │    └── run.sh
+│    ├── redshift
+│    │    ├── __init__.py   
+│    │    ├── analysis.sql
+│    │    └── run.sh
+│    ├── config.ini
+│    ├── main.py
+└──  images
+     ├── data_pipeline.png
+     ├── data_schema.png
+     ├── trending_of_subreddit_ramen.png
+     ├── spark_processing_1.png
+     └── spark_processing_2.png
+
+
 ## How does it work?
 #### 1. S3
-
 I wrote a python script using boto3 to download both submission and comment compressed files to EC2 instance, uncompress it, copy it to S3 bucket and delete it on EC2 instance. On top of the workflow, I defined a Airflow task to run the downloading process monthly as the data generating.
 
 
 #### 2. Spark: ETL
-
 ![Image description](images/spark_processing_1.png)
 
 ![Image description](images/spark_processing_2.png)
 
 
 #### 3. Redshift: Data warehousing
-
 ![Image description](images/data_schema.png)
 
-
-#### 4. Tableau: Visualization
-
-#### 5. Airflow: Automatic S3 and spark jobs monthly
+#### 4. Airflow: Automatic S3 and spark jobs monthly
 
 
 
