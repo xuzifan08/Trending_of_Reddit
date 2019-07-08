@@ -12,7 +12,7 @@ This is one use case for the big data warehouse. The first graph shows the numbe
 
 ![Image description](images/trending_of_subreddit_ramen.png)
 
-The first graph shows the number of active redditors under a specific subreddit monthly, the second graph represents the score density every hour for a specific subreddit, the score density is the total score devides total submission per hour, it provides you when you can get more upvotes if you want to post a submission under a subreddit.
+The first graph shows the number of active redditors under a specific subreddit monthly, the second graph represents the score density every hour for a specific subreddit, the score density is the total score devides total submission per hour, it provides you when you can get more upvotes if you want to post a submission under a subreddit. You can select whatever subreddit you are interested in with the dropdown list to show the statistics.
 
 
 ## Data Pipeline
