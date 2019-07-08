@@ -59,12 +59,15 @@ I wrote a python script using boto3 to download both submission and comment comp
 
 
 #### 2. Spark: ETL
+I used spark to read data from s3 as two dataframe: submission and comment. Extracted, unioned and created author and subreddit as dataframe from both submission and comment.
 ![Image description](images/spark_processing_1.png)
 
+Then I generated two new submission and comment dataframe by getting useful columns from original dataframe.
 ![Image description](images/spark_processing_2.png)
 
 
 #### 3. Redshift: Data warehousing
+The finalized structured data schema is stored in Redshift:
 ![Image description](images/data_schema.png)
 
 #### 4. Airflow: Automatic S3 and spark jobs monthly
