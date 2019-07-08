@@ -67,13 +67,11 @@ Then I generated two new submission and comment dataframe by getting useful colu
 
 
 #### 3. Redshift: Data warehousing
-The finalized structured data schema is stored in Redshift:
+The finalized structured data schema is stored in Redshift which can provide different services:
 ![Image description](images/data_schema.png)
 
 #### 4. Airflow: Automatic S3 and spark jobs monthly
-
-
-
+On top of the pipeline, I build a airflow to run the s3 and spark module monthly to update the data from website to my data warehouse.
 
 
 
