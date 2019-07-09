@@ -35,6 +35,12 @@ def add_str(str_a):
 	
 
 def main(sc):
+	spark = SparkSession.builder \
+                 .appName("TrendingReddit") \
+                 .config("spark.executor.memory", "1gb") \
+                 .getOrCreate()
+
+        sc=spark.sparkContext
 	"""Read submission and comment json file from s3"""
 	submission = SparkSession(sc).read.json("s3a://insightredditdata/redditsubmission/RS_2015-06")
         comment = SparkSession(sc).read.json("s3a://insightredditdata/redditcomment/RC_2015-06")
@@ -114,13 +120,6 @@ if __name__ == '__main__':
 	"""
     	Setting up Spark session and Spark context, AWS access key
     	"""
-    	spark = SparkSession.builder \
-        	.appName("TrendingReddit") \
-        	.config("spark.executor.memory", "1gb") \
-        	.getOrCreate()
-
-    	sc=spark.sparkContext
-
     	main(sc)
 
 
