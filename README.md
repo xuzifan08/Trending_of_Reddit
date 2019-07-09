@@ -2,13 +2,13 @@
 
 
 ## Introduction
-Reddit is the sixth-most-popular site in the United States. It’s a massive collection of forums, where people can share news and content or comment on other people’s posts. 
+Reddit is the sixth-most-popular social media platform in the United States. It’s a massive collection of forums, where people can share news and content or comment on other people’s posts. 
 
 Reddit is broken up into more than a million communities known as "subreddits", which has grown up to 140 millions during the last five years. Each subreddit has a specific topic, such as technology, politics or music. Reddit's homepage, or the front page, as it is often called, is composed of the most popular posts from each default subreddit. Reddit site members, also known as redditors, submit content which is then voted upon by other members. The goal is to send well-regarded content to the top of the site's front page. Content is voted on via upvotes and downvotes which calculates as scores.
 
-With explosively large informations generated everyday on Reddit, we can use it for Social Media Marketing, designing recommender systems in terms of different perspectives, machine learning and data analysis. It's worth the effort to design a data pipeline in order to process reddit data for building a big data warehouse which can provide those services above.
+With explosively large information generated everyday on Reddit, we can use it for Social Media Marketing, designing recommender systems in terms of different perspectives, machine learning and data analysis. It's worth the effort to design a data pipeline in order to process reddit data for building a big data warehouse which can provide those services above.
 
-This is one use case for the big data warehouse which is created by Tableau:
+This is one use case for the big data warehouse which is built by Tableau:
 
 ![Image description](images/trending_of_subreddit_ramen.png)
 
@@ -60,7 +60,7 @@ I wrote a python script using boto3 to download both submission and comment comp
 
 
 #### 2. Spark: ETL
-I used spark to read data from s3 as two dataframe: submission and comment. Extracted, unioned , drop duplicates and created author and subreddit as dataframe from both submission and comment.
+I used spark to read data from s3 as two dataframe: submission and comment. Extracted, unioned, dropped duplicates and created authors and subreddit as dataframe from both submission and comment.
 ![Image description](images/spark_processing_1.png)
 
 Then I generated two new submission and comment dataframe by getting useful columns from original dataframe.
